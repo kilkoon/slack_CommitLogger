@@ -4,7 +4,7 @@ from slack_sdk.errors import SlackApiError
 from datetime import datetime
 import time
 
-SLACK_TOKEN = "xoxb-1931835880133-1957930681956-v19mTC2bYLEhNjjinAisj7wM"
+SLACK_TOKEN = "xoxb-1931835880133-1957930681956-VwC1HdBOAXUuNcXzZLcaMfh1"
 USER_ID_GITHUB = 'U01TZS78865'
 
 client = WebClient(token=SLACK_TOKEN)
@@ -29,8 +29,8 @@ for conv in conversation_list_github:
         attachment = conv['attachments'][0]
         if 'author_name' in attachment:
             timestamp = conv['ts'].split('.')[1]
-            print(datetime.utcfromtimestamp(int(timestamp)))
-            # print(attachment['author_name'] + ":" + datetime.fromtimestamp(int(timestamp)))
+            # print(datetime.utcfromtimestamp(int(timestamp)))
+            print(attachment['author_name'] + ":" + attachment['fallback'])
 
 # 포스팅
 # client.chat_postMessage(channel=channel_id, text="test clientLogger") 
