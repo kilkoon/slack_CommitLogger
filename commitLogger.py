@@ -3,8 +3,10 @@ from slack_sdk import WebClient
 from slack_sdk.errors import SlackApiError
 from datetime import datetime
 import time
+import sys
 
-SLACK_TOKEN = "xoxb-1931835880133-1957930681956-VwC1HdBOAXUuNcXzZLcaMfh1"
+SLACK_TOKEN = sys.argv[1]
+print(SLACK_TOKEN)
 USER_ID_GITHUB = 'U01TZS78865'
 
 client = WebClient(token=SLACK_TOKEN)
